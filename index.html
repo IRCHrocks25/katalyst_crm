@@ -567,6 +567,76 @@
  #orb-l,#orb-r{display:none}
  .katalyst-center-card{width:120px !important;height:72px !important}
  }
+
+ /* ============================================================
+    COMPREHENSIVE MOBILE PASS — keep every section intact
+    ============================================================ */
+ @media (max-width: 1024px){
+  /* never let anything cause a horizontal scrollbar */
+  html,body{overflow-x:clip}
+  /* Reputation (rebuilt 2-col) */
+  [style*="grid-template-columns:1fr 1fr;gap:80px"]{grid-template-columns:1fr !important;gap:36px !important}
+  /* Split product feature cards -> stack the two halves */
+  .feat-card div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;min-height:0 !important}
+  .feat-card div[style*="grid-template-columns:1fr 1fr"]>div{padding:32px 26px !important}
+  /* Quote section fixed 480px column */
+  [style*=";width:480px"]{width:100% !important;max-width:480px}
+ }
+
+ @media (max-width: 768px){
+  /* Prevent awkward single-word last lines on headlines across the site */
+  h1,h2,h3,h4{text-wrap:balance;-webkit-text-wrap:balance}
+  p{text-wrap:pretty;-webkit-text-wrap:pretty}
+  .step-cards-wrap>div[style*="repeat(7,1fr)"]{grid-template-columns:1fr !important}
+  .step-line{display:none}
+  .step-card{border-right:none;border-bottom:1px solid #eef1f6;padding:24px 18px 26px}
+
+  /* STEP cards mobile typography: ~20% bigger, balanced wrapping, no orphan words */
+  .step-num{font-size:13.2px !important;margin-bottom:14px !important}
+  .step-card h4{font-size:18px !important;line-height:1.35 !important;text-wrap:balance;-webkit-text-wrap:balance}
+  .step-card p{font-size:15.6px !important;line-height:1.6 !important;text-wrap:pretty;-webkit-text-wrap:pretty}
+  /* STEP BY STEP / pipeline timeline (4 columns) -> single column */
+  div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr !important}
+  .pipe-col{border-right:none !important;padding:26px 26px 36px !important}
+
+  /* AI Business OS — mobile: simple stacked cards with a gentle scroll reveal
+     (no pinning / picker-wheel — that's desktop only) */
+  .os-pin{height:auto !important}
+  .os-pin-inner{position:static !important;height:auto !important;padding:24px 0 0 !important;gap:26px !important;justify-content:flex-start !important}
+  .ic-head{padding-top:24px}
+  .ic-head h2{font-size:clamp(26px,7vw,38px)}
+  .osx-wrap{grid-template-columns:1fr !important;gap:0 !important}
+  .osx-steps{display:none !important}
+  .osx-deck{position:static !important;height:auto !important;max-height:none !important;display:flex !important;flex-direction:column;gap:16px;max-width:440px;margin:0 auto}
+  .osx-card{position:static !important;inset:auto !important;height:auto;opacity:0;transform:translateY(26px);filter:none !important;transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1);pointer-events:auto !important}
+  .osx-card.in{opacity:1 !important;transform:none !important}
+  .osx-viz{min-height:200px}
+
+  /* secondary 2-col grids collapse */
+  .insight-grid,.metrics-grid{grid-template-columns:1fr}
+
+  /* configurator */
+  .cfg-grid{gap:8px}
+
+  /* Hero: let headline + subtitle wrap instead of clipping */
+  #hero-hl{white-space:normal !important}
+  .hero-sub{white-space:normal !important;letter-spacing:.04em}
+
+  /* Daniel Wood quote: stack — text full-width left on top, image centered at bottom */
+  .tq-box{flex-direction:column !important;min-height:0 !important}
+  .tq-text{max-width:100% !important;width:100%;padding:36px 24px 4px !important;text-align:left}
+  .tq-img{width:100% !important;justify-content:center !important}
+  .tq-img img{max-height:340px}
+  .tq-ov{background:linear-gradient(180deg,rgba(5,8,25,.82) 0%,rgba(5,8,25,.55) 55%,rgba(5,8,25,.3) 100%) !important}
+ }
+
+ @media (max-width: 600px){
+  .container{padding:0 16px}
+  .step-card{padding:20px 14px 24px}
+  .cfg-card{padding:22px 20px}
+  /* tame oversized inline paddings inside dark/light panels */
+  .feat-card div[style*="grid-template-columns:1fr 1fr"]>div{padding:26px 20px !important}
+ }
 </style>
 </head>
 <body>
@@ -599,7 +669,7 @@
    <a style="color:rgba(255,255,255,.75);font-size:17px;transition:color .2s,transform .2s;display:inline-block" onmouseover="this.style.color='#fff';this.style.transform='translateY(-1px)'" onmouseout="this.style.color='rgba(255,255,255,.75)';this.style.transform=''">Testimonials</a>
    </div>
    <div class="nav-cta" style="gap:8px">
-   <a href="https://app.industryrockstars.ch/" style="font-size:14px;color:rgba(255,255,255,.8);font-weight:500;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:color .2s,background .2s;padding:8px 14px;border-radius:8px" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.color='rgba(255,255,255,.8)';this.style.background='transparent'"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Login</a>
+  <a href="https://app.industryrockstars.ch/" style="font-size:14px;color:rgba(255,255,255,.8);font-weight:500;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:color .2s,background .2s;padding:8px 14px;border-radius:8px" onmouseover="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.color='rgba(255,255,255,.8)';this.style.background='transparent'"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Login</a>
    <a class="btn btn-primary" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(12px);font-size:14px;padding:9px 22px;transition:background .2s,border-color .2s,transform .2s" onmouseover="this.style.background='rgba(255,255,255,.22)';this.style.borderColor='rgba(255,255,255,.5)';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='rgba(255,255,255,.12)';this.style.borderColor='rgba(255,255,255,.25)';this.style.transform=''">Contact Us</a>
    <!-- Hamburger -->
    <button id="nav-burger" onclick="var m=document.getElementById('mobile-menu');m.style.display=m.style.display==='flex'?'none':'flex'" style="display:none;flex-direction:column;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:9px;cursor:pointer">
@@ -615,7 +685,7 @@
      <a style="color:rgba(255,255,255,.8);padding:13px 16px;border-radius:8px;font-size:17px;font-weight:500;display:block" onmouseover="this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.background=''">How It Works</a>
      <a style="color:rgba(255,255,255,.8);padding:13px 16px;border-radius:8px;font-size:17px;font-weight:500;display:block" onmouseover="this.style.background='rgba(255,255,255,.06)'" onmouseout="this.style.background=''">Testimonials</a>
      <div style="border-top:1px solid rgba(255,255,255,.08);margin:12px 0;padding-top:12px;display:flex;flex-direction:column;gap:10px">
-       <a href="https://app.industryrockstars.ch/" style="color:rgba(255,255,255,.8);padding:13px 16px;border-radius:8px;font-size:17px;display:flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Login</a>
+      <a href="https://app.industryrockstars.ch/" style="color:rgba(255,255,255,.8);padding:13px 16px;border-radius:8px;font-size:17px;display:flex;align-items:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Login</a>
        <a style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:13px 20px;text-align:center;font-weight:600;font-size:17px">Contact Us</a>
      </div>
    </div>
@@ -634,7 +704,7 @@
 
 
    <!-- Headline -->
-   <h1 id="hero-hl" style="font-size:clamp(42px,8vw,104px);font-weight:500;letter-spacing:-.04em;line-height:.95;margin:0 0 28px;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap;background:linear-gradient(110deg,#fff 0%,#fff 50%,#ddeeff 80%,#fff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:400% 400%;transition:background-position .1s ease-out">Get more for less.</h1>
+   <h1 id="hero-hl" style="font-size:clamp(48px,9.2vw,120px);font-weight:500;letter-spacing:-.04em;line-height:.95;margin:0 0 28px;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap;background:linear-gradient(110deg,#fff 0%,#fff 50%,#ddeeff 80%,#fff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:400% 400%;transition:background-position .1s ease-out">Get more for less.</h1>
    <script>
    (function(){
      var h = document.getElementById('hero-hl');
@@ -648,7 +718,7 @@
    </script>
 
    <!-- Subtitle -->
-   <p style="font-size:clamp(16px,1.6vw,22px);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);margin:0 auto 28px;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif">We engineer the operational infrastructure of your business.</p>
+   <p class="hero-sub" style="font-size:clamp(16px,1.6vw,22px);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);margin:0 auto 28px;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;text-align:center;width:100%;max-width:none">We engineer the operational infrastructure of your business.</p>
 
    <!-- Subheadline -->
    <p style="font-size:clamp(22px,2.6vw,29px);font-weight:600;color:#fff;margin:0 0 16px;letter-spacing:-.01em;line-height:1.4;max-width:720px;margin-inline:auto">Turn every click, call, and comment into revenue</p>
@@ -881,15 +951,15 @@
 <!-- ============== QUOTE SECTION ============== -->
 <section id="sec-testi-hero" class="block" style="padding:60px 0">
  <div class="container">
- <div style="position:relative;border-radius:var(--radius-xl);overflow:hidden;min-height:520px;display:flex;align-items:stretch">
+ <div class="tq-box" style="position:relative;border-radius:var(--radius-xl);overflow:hidden;min-height:520px;display:flex;align-items:stretch">
 
  <!-- Background image -->
  <div style="position:absolute;inset:0;background:url('https://res.cloudinary.com/dcuswyfur/image/upload/v1779469717/Frame_1707483493_vhtc26.png') center/cover no-repeat;border-radius:var(--radius-xl)"></div>
  <!-- Dark overlay for text readability -->
- <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,25,.75) 0%,rgba(5,8,25,.5) 55%,rgba(5,8,25,.1) 100%);border-radius:var(--radius-xl)"></div>
+ <div class="tq-ov" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,25,.75) 0%,rgba(5,8,25,.5) 55%,rgba(5,8,25,.1) 100%);border-radius:var(--radius-xl)"></div>
 
  <!-- Left: text content -->
- <div style="position:relative;z-index:2;flex:1;padding:60px 56px;display:flex;flex-direction:column;justify-content:center;max-width:58%">
+ <div class="tq-text" style="position:relative;z-index:2;flex:1;padding:60px 56px;display:flex;flex-direction:column;justify-content:center;max-width:58%">
  <div style="font-size:80px;line-height:.5;color:#fff;opacity:.35;margin-bottom:12px;user-select:none">"</div>
  <p style="font-size:clamp(20px,2.4vw,30px);font-weight:600;line-height:1.4;letter-spacing:-.02em;color:#fff;margin:0 0 36px">
  Thousands of registered participants to our Financial Freedom Summit at the lowest cost per lead ever! Katalyst delivered a comprehensive promotional platform for all our events.
@@ -902,7 +972,7 @@
  </div>
 
  <!-- Right: person image pinned to bottom -->
- <div style="position:relative;z-index:2;width:480px;flex-shrink:0;display:flex;align-items:flex-end;justify-content:center">
+ <div class="tq-img" style="position:relative;z-index:2;width:480px;flex-shrink:0;display:flex;align-items:flex-end;justify-content:center">
  <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1779469720/Katalyst-3.1_1_euo64d.png"
  style="display:block;width:100%;max-height:560px;object-fit:contain;object-position:bottom center"
  alt="Daniel Wood">
@@ -1964,9 +2034,17 @@
   <script>
   (function(){
    var root=document.getElementById('osx'); if(!root)return;
+   var cards=[].slice.call(root.querySelectorAll('.osx-card'));
+   /* MOBILE: simple reveal-on-scroll, no pinning */
+   if(window.matchMedia('(max-width:768px)').matches){
+    if('IntersectionObserver' in window){
+     var mio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.15});
+     cards.forEach(function(c){mio.observe(c);});
+    } else { cards.forEach(function(c){c.classList.add('in');}); }
+    return;
+   }
    var pin=document.getElementById('osPin');
    var steps=[].slice.call(root.querySelectorAll('.osx-step'));
-   var cards=[].slice.call(root.querySelectorAll('.osx-card'));
    var track=document.getElementById('osxTrack');
    var n=cards.length, cur=-1;
    var ROWH=66, VIEW=330, CENTER=VIEW/2;
@@ -2090,7 +2168,7 @@
 </section>
 
 <!-- ============== SECTION 6 — PRICING ============== -->
-<section id="sec-pricing" style="padding:120px 0 140px;position:relative;overflow:hidden;background:#020617">
+<section id="sec-pricing" style="padding:120px 0 140px;position:relative;overflow:hidden;background:#080a14">
  <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1779899212/Frame_1707483499_1_a654e9.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;pointer-events:none" alt="">
  <div style="position:absolute;inset:0;background:rgba(2,6,23,.4);z-index:1;pointer-events:none"></div>
 
@@ -2113,7 +2191,9 @@
 
  /* Grid */
  .px-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;position:relative;z-index:2}
- @media(max-width:980px){.px-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+ @media(max-width:980px){.px-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;gap:28px}
+  .px-card.featured{transform:none !important}
+  .px-card.featured:hover{transform:translateY(-6px) !important}}
 
  /* ——— CARD BASE ——— */
  .px-card{
@@ -3083,6 +3163,8 @@
 
  <!-- Background image -->
  <div style="position:absolute;inset:0;background:url('https://res.cloudinary.com/dcuswyfur/image/upload/v1780048188/a5e26ca58ef4bd3f3c8afa9244381cda_1_h3xeda.png') center/cover no-repeat;border-radius:var(--radius-xl)"></div>
+ <!-- Lighten overlay -->
+ <div style="position:absolute;inset:0;background:rgba(255,255,255,.4);border-radius:var(--radius-xl);pointer-events:none"></div>
 
  <!-- Text content — full width, left aligned, dark -->
  <div style="position:relative;z-index:2;flex:1;padding:72px 64px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left">
@@ -3179,7 +3261,7 @@
   .tc-img-col{width:100%;max-width:340px;margin:0 auto}
   .tc-img-col img{max-height:300px}
   .tc-img-col::before{display:none}
-  .tc-text-col{padding:28px 8px}
+  .tc-text-col{padding:28px 8px;text-align:center}
 }
 </style>
 
@@ -3342,7 +3424,7 @@
  </div>
  <div class="foot-col">
  <h4>CONTACT</h4>
- <ul><li><a href="mailto:support@katalyst-crm.com">support@katalyst-crm.com</a></li><li><a href="tel:+16826888681" style="display:inline-flex;align-items:center;gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 11 19.79 19.79 0 0 1 1.04 2.34 2 2 0 0 1 3 .18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 14.92z"/></svg>+1 682-688-8681</a></li><li><a href="tel:+41767696925" style="display:inline-flex;align-items:center;gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 11 19.79 19.79 0 0 1 1.04 2.34 2 2 0 0 1 3 .18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 14.92z"/></svg>+41 76 769 69 25</a></li></ul>
+ <ul><li><a href="mailto:support@katalyst-crm.com">support@katalyst-crm.com</a></li><li><a href="tel:+41767696925" style="display:inline-flex;align-items:center;gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 11 19.79 19.79 0 0 1 1.04 2.34 2 2 0 0 1 3 .18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 14.92z"/></svg>+41 76 769 69 25</a></li></ul>
  </div>
  </div>
  <!-- Restructured foot-bottom -->
