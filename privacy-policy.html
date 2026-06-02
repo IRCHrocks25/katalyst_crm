@@ -4,6 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="8e3a5254-794f-4028-abb8-1d214f26bc6e" data-blockingmode="auto" type="text/javascript"></script>
+  <style>
+    /* Cookiebot banner restyled to match landing aesthetic. Same CSS
+       as in index.html — kept inline so each page can render the
+       banner standalone. */
+    #CybotCookiebotDialog,
+    #CybotCookiebotDialog * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important; }
+    #CybotCookiebotDialog {
+      background: linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%) !important;
+      color: #fff !important;
+      border: none !important;
+      border-radius: 18px !important;
+      box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08) !important;
+    }
+    #CybotCookiebotDialogBodyContentTitle { color: #fff !important; font-weight: 700 !important; }
+    #CybotCookiebotDialogBodyContentText,
+    .CybotCookiebotDialogBodyContentText,
+    #CybotCookiebotDialog p,
+    #CybotCookiebotDialog div { color: rgba(255,255,255,.78) !important; }
+    #CybotCookiebotDialog a { color: #b8a4ff !important; }
+    #CybotCookiebotDialogPoweredbyCybot,
+    #CybotCookiebotDialogPoweredbyText { color: rgba(255,255,255,.32) !important; opacity: .7 !important; }
+    .CybotCookiebotDialogBodyButton,
+    #CybotCookiebotDialog button {
+      border-radius: 10px !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+      padding: 11px 22px !important;
+      transition: opacity .2s, transform .15s !important;
+      border: none !important;
+      cursor: pointer !important;
+    }
+    #CybotCookiebotDialogBodyButtonAccept,
+    #CybotCookiebotDialogBodyLevelButtonAcceptAll {
+      background: linear-gradient(135deg,#3b6ef5,#8b5cf6) !important;
+      color: #fff !important;
+    }
+    #CybotCookiebotDialogBodyButtonDecline,
+    #CybotCookiebotDialogBodyLevelButtonDecline {
+      background: rgba(255,255,255,.08) !important;
+      color: #fff !important;
+      border: 1px solid rgba(255,255,255,.18) !important;
+    }
+  </style>
   <title>Privacy Policy | Katalyst CRM</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background: #fff; color: #0f172a; line-height: 1.65; }
