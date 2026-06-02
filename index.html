@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Cookiebot CMP banner. data-blockingmode="auto" shows the Accept/Deny
+     popup on first visit and blocks every third-party tracker until
+     the visitor consents. -->
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="8e3a5254-794f-4028-abb8-1d214f26bc6e" data-blockingmode="auto" type="text/javascript"></script>
 <title>Katalyst — All-in-One AI CRM & Growth Engine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2627,7 +2631,7 @@
   <div class="px-foot">
    <span>
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    30-day free trial · No credit card required · Cancel anytime
+    30-day trial · No credit card required · Cancel anytime
    </span>
   </div>
 
@@ -3433,6 +3437,7 @@
    <div class="links" style="gap:24px">
     <a href="./privacy-policy.html" style="cursor:pointer;font-size:12px">Privacy Policy</a>
     <a href="./terms-and-conditions.html" style="cursor:pointer;font-size:12px;color:rgba(255,255,255,.6)!important">Terms &amp; Conditions</a>
+    <a href="#" onclick="if(window.Cookiebot){Cookiebot.renew();return false;}" style="cursor:pointer;font-size:12px">Cookie Policy</a>
     <a href="mailto:support@katalyst-crm.com" style="cursor:pointer;font-size:12px">support@katalyst-crm.com</a>
    </div>
   </div>
