@@ -8,42 +8,57 @@
      the visitor consents. -->
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="8e3a5254-794f-4028-abb8-1d214f26bc6e" data-blockingmode="auto" type="text/javascript"></script>
 <style>
-  /* Cookiebot banner restyled to match the landing aesthetic — dark
-     navy → indigo gradient, Plus Jakarta typography, gradient Accept,
-     outline Decline. Cookiebot's defaults are bright/white; this is
-     the same set of class names just retargeted. */
+  /* Cookiebot banner — clean, minimal, white card aesthetic.
+     Centered modal, bold dark heading, full-width black Accept,
+     text-link Decline. Inspired by the reference design Sonia
+     shared. */
   #CybotCookiebotDialog,
   #CybotCookiebotDialog * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important; }
   #CybotCookiebotDialog {
-    background: linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%) !important;
-    color: #fff !important;
+    background: #ffffff !important;
+    color: #0e0b1f !important;
     border: none !important;
-    border-radius: 18px !important;
-    box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, .18), 0 0 0 1px rgba(15, 23, 42, .06) !important;
+    max-width: 420px !important;
+    padding: 32px 28px !important;
+    text-align: center !important;
   }
   #CybotCookiebotDialogBodyContentTitle,
-  .CybotCookiebotDialogBodyContentTitle { color: #fff !important; font-weight: 700 !important; letter-spacing: -.01em !important; }
+  .CybotCookiebotDialogBodyContentTitle {
+    color: #0e0b1f !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    letter-spacing: -.01em !important;
+    margin: 6px 0 12px !important;
+  }
   #CybotCookiebotDialogBodyContentText,
-  .CybotCookiebotDialogBodyContentText,
-  #CybotCookiebotDialogDetailBodyContentTextAboutCookies,
-  #CybotCookiebotDialogDetailBodyContentCookieContainerTypeDetails,
-  #CybotCookiebotDialog a,
-  #CybotCookiebotDialog p,
-  #CybotCookiebotDialog div { color: rgba(255,255,255,.78) !important; }
-  #CybotCookiebotDialog a { color: #b8a4ff !important; text-decoration: underline !important; }
+  .CybotCookiebotDialogBodyContentText {
+    color: #6b6786 !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+  #CybotCookiebotDialog a { color: #3b6ef5 !important; text-decoration: underline !important; }
+  /* Hide the "Powered by Cookiebot" footnote for cleaner look */
   #CybotCookiebotDialogPoweredbyCybot,
   #CybotCookiebotDialogPoweredbyText,
-  #CybotCookiebotDialogPoweredbyImage { color: rgba(255,255,255,.32) !important; opacity: .7 !important; }
-  /* Buttons row */
+  #CybotCookiebotDialogPoweredbyImage,
+  #CybotCookiebotDialogPoweredbyLink { display: none !important; }
+  /* Buttons */
   #CybotCookiebotDialogBodyButtonsWrapper,
-  #CybotCookiebotDialogBodyLevelButtonsSelectPane { gap: 10px !important; }
+  #CybotCookiebotDialogBodyLevelButtonsSelectPane {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+  }
   .CybotCookiebotDialogBodyButton,
   #CybotCookiebotDialog button {
-    border-radius: 10px !important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-    padding: 11px 22px !important;
-    transition: opacity .2s, transform .15s, background .2s !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    padding: 12px 24px !important;
+    width: 100% !important;
+    transition: opacity .15s !important;
     border: none !important;
     cursor: pointer !important;
   }
@@ -51,40 +66,22 @@
   #CybotCookiebotDialogBodyLevelButtonAccept,
   #CybotCookiebotDialogBodyLevelButtonAcceptAll,
   #CybotCookiebotDialogBodyButtonAcceptAll {
-    background: linear-gradient(135deg,#3b6ef5,#8b5cf6) !important;
-    color: #fff !important;
-    border: none !important;
+    background: #0e0b1f !important;
+    color: #ffffff !important;
   }
   #CybotCookiebotDialogBodyButtonAccept:hover,
-  #CybotCookiebotDialogBodyLevelButtonAccept:hover,
-  #CybotCookiebotDialogBodyLevelButtonAcceptAll:hover,
-  #CybotCookiebotDialogBodyButtonAcceptAll:hover { opacity: .92 !important; transform: translateY(-1px) !important; }
+  #CybotCookiebotDialogBodyLevelButtonAcceptAll:hover { opacity: .88 !important; }
+  /* Decline becomes a text link */
   #CybotCookiebotDialogBodyButtonDecline,
-  #CybotCookiebotDialogBodyLevelButtonDecline,
-  #CybotCookiebotDialogBodyButtonsWrapper button:not(#CybotCookiebotDialogBodyButtonAccept):not(#CybotCookiebotDialogBodyButtonAcceptAll) {
-    background: rgba(255,255,255,.08) !important;
-    color: #fff !important;
-    border: 1px solid rgba(255,255,255,.18) !important;
+  #CybotCookiebotDialogBodyLevelButtonDecline {
+    background: transparent !important;
+    color: #6b6786 !important;
+    text-decoration: underline !important;
+    padding: 6px !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
   }
-  #CybotCookiebotDialogBodyButtonDecline:hover,
-  #CybotCookiebotDialogBodyLevelButtonDecline:hover { background: rgba(255,255,255,.14) !important; }
-  /* Tabs + nav inside the details modal */
-  .CybotCookiebotDialogNavItemLink {
-    color: rgba(255,255,255,.65) !important;
-    border-bottom-color: transparent !important;
-  }
-  .CybotCookiebotDialogNavItemLink.CybotCookiebotDialogActive {
-    color: #b8a4ff !important;
-    border-bottom-color: #8b5cf6 !important;
-  }
-  /* Detail cards / panels */
-  #CybotCookiebotDialogDetailBodyContentCookieContainerTypes button,
-  .CybotCookiebotDialogDetailBodyContentCookieTypeIntro,
-  .CybotCookiebotDialogDetailBodyContentCookieTypeTable {
-    background: rgba(255,255,255,.04) !important;
-    border: 1px solid rgba(255,255,255,.08) !important;
-    color: rgba(255,255,255,.78) !important;
-  }
+  #CybotCookiebotDialogBodyButtonDecline:hover { color: #0e0b1f !important; }
 </style>
 <title>Katalyst — All-in-One AI CRM & Growth Engine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
