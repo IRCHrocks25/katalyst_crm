@@ -7,6 +7,82 @@
      popup on first visit and blocks every third-party tracker until
      the visitor consents. -->
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="8e3a5254-794f-4028-abb8-1d214f26bc6e" data-blockingmode="auto" type="text/javascript"></script>
+<style>
+  /* Cookiebot banner — clean, minimal, white card aesthetic.
+     Centered modal, bold dark heading, full-width black Accept,
+     text-link Decline. Inspired by the reference design Sonia
+     shared. */
+  #CybotCookiebotDialog,
+  #CybotCookiebotDialog * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important; }
+  #CybotCookiebotDialog {
+    background: #ffffff !important;
+    color: #0e0b1f !important;
+    border: none !important;
+    border-radius: 14px !important;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, .18), 0 0 0 1px rgba(15, 23, 42, .06) !important;
+    max-width: 420px !important;
+    padding: 32px 28px !important;
+    text-align: center !important;
+  }
+  #CybotCookiebotDialogBodyContentTitle,
+  .CybotCookiebotDialogBodyContentTitle {
+    color: #0e0b1f !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    letter-spacing: -.01em !important;
+    margin: 6px 0 12px !important;
+  }
+  #CybotCookiebotDialogBodyContentText,
+  .CybotCookiebotDialogBodyContentText {
+    color: #6b6786 !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+  #CybotCookiebotDialog a { color: #3b6ef5 !important; text-decoration: underline !important; }
+  /* Hide the "Powered by Cookiebot" footnote for cleaner look */
+  #CybotCookiebotDialogPoweredbyCybot,
+  #CybotCookiebotDialogPoweredbyText,
+  #CybotCookiebotDialogPoweredbyImage,
+  #CybotCookiebotDialogPoweredbyLink { display: none !important; }
+  /* Buttons */
+  #CybotCookiebotDialogBodyButtonsWrapper,
+  #CybotCookiebotDialogBodyLevelButtonsSelectPane {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+  }
+  .CybotCookiebotDialogBodyButton,
+  #CybotCookiebotDialog button {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    padding: 12px 24px !important;
+    width: 100% !important;
+    transition: opacity .15s !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+  #CybotCookiebotDialogBodyButtonAccept,
+  #CybotCookiebotDialogBodyLevelButtonAccept,
+  #CybotCookiebotDialogBodyLevelButtonAcceptAll,
+  #CybotCookiebotDialogBodyButtonAcceptAll {
+    background: #0e0b1f !important;
+    color: #ffffff !important;
+  }
+  #CybotCookiebotDialogBodyButtonAccept:hover,
+  #CybotCookiebotDialogBodyLevelButtonAcceptAll:hover { opacity: .88 !important; }
+  /* Decline becomes a text link */
+  #CybotCookiebotDialogBodyButtonDecline,
+  #CybotCookiebotDialogBodyLevelButtonDecline {
+    background: transparent !important;
+    color: #6b6786 !important;
+    text-decoration: underline !important;
+    padding: 6px !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+  }
+  #CybotCookiebotDialogBodyButtonDecline:hover { color: #0e0b1f !important; }
+</style>
 <title>Katalyst — All-in-One AI CRM & Growth Engine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
