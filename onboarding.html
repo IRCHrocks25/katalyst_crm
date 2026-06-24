@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Hidden page: not linked anywhere in the public navigation and excluded
+     from search engines. Shared directly with clients who are booking their
+     onboarding calls. -->
+<meta name="robots" content="noindex, nofollow" />
+<title>Book Your Onboarding | Katalyst CRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+  html,body{margin:0;padding:0;min-height:100%}
+  body{
+    background:radial-gradient(120% 120% at 50% 0%, #0a0e22 0%, #04060f 55%, #04060f 100%);
+    color:#fff;-webkit-font-smoothing:antialiased;line-height:1.5;
+    display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px;
+  }
+  .card{
+    width:100%;max-width:540px;text-align:center;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:24px;
+    padding:48px 36px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.6);
+  }
+  .logo{height:30px;width:auto;margin:0 auto 28px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.05;margin:0 0 14px}
+  .sub{font-size:16px;color:rgba(255,255,255,.66);margin:0 auto 34px;max-width:400px}
+  .sessions{display:flex;flex-direction:column;gap:14px;margin:0 auto;max-width:380px}
+  .session{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    text-decoration:none;text-align:left;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;
+    padding:18px 22px;
+    transition:background .2s,border-color .2s,transform .2s;
+  }
+  .session:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.30);transform:translateY(-2px)}
+  .session .label{display:block;font-size:17px;font-weight:600;color:#fff}
+  .session .desc{display:block;font-size:13px;color:rgba(255,255,255,.55);margin-top:3px}
+  .session .arrow{flex:0 0 auto;font-size:20px;color:rgba(255,255,255,.55)}
+  .foot{margin-top:34px;font-size:13px;color:rgba(255,255,255,.4)}
+  .foot a{color:rgba(255,255,255,.7);text-decoration:none}
+  .foot a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+  <main class="card">
+    <img class="logo" src="https://res.cloudinary.com/dcuswyfur/image/upload/v1779468134/katalyst_logo_white_ea4z32.png" alt="Katalyst">
+    <h1>Book your onboarding</h1>
+    <p class="sub">Welcome aboard. Schedule your two onboarding sessions below to get your setup underway.</p>
+
+    <div class="sessions">
+      <a class="session" href="https://link.funnl.me/widget/bookings/industry-rockstar-onboarding-1" target="_blank" rel="noopener">
+        <span>
+          <span class="label">Onboarding — Session 1</span>
+          <span class="desc">Your first 1:1 onboarding call</span>
+        </span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="session" href="https://link.funnl.me/widget/bookings/industry-rockstar-onboarding-2" target="_blank" rel="noopener">
+        <span>
+          <span class="label">Onboarding — Session 2</span>
+          <span class="desc">Your follow-up 1:1 onboarding call</span>
+        </span>
+        <span class="arrow">&rarr;</span>
+      </a>
+    </div>
+
+    <p class="foot">Already a client? <a href="https://app.industryrockstars.ch/">Log in to your account</a></p>
+  </main>
+</body>
+</html>
