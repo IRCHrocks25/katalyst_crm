@@ -2540,6 +2540,11 @@
    box-shadow:0 0 40px rgba(255,255,255,.3),0 16px 48px rgba(0,0,0,.2);
  }
 
+ button.px-cta{
+   appearance:none;-webkit-appearance:none;
+   font-family:inherit;line-height:1.5;
+ }
+
  .px-foot{text-align:center;margin-top:60px}
  .px-foot span{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,.4)}
  </style>
@@ -2603,7 +2608,7 @@
       </ul>
      </div>
 
-   <a href="https://buy.stripe.com/4gMaEX2rN9obayuedK2Ry1v" class="px-cta px-cta-blue">Start Free Trial</a>
+   <button type="button" class="px-cta px-cta-blue" onclick="openFormModal('t1')">Start Free Trial</button>
     </div>
    </div>
 
@@ -2651,7 +2656,7 @@
       </ul>
      </div>
 
-   <a href="https://buy.stripe.com/eVa6rx228eRTdI48xt" class="px-cta px-cta-white">START NOW</a>
+   <button type="button" class="px-cta px-cta-white" onclick="openFormModal('t2')">START NOW</button>
     </div>
    </div>
 
@@ -2700,7 +2705,7 @@
       </ul>
      </div>
 
-   <a href="https://buy.stripe.com/3csdTZgX22579rOdRO" class="px-cta px-cta-blue">START NOW</a>
+   <button type="button" class="px-cta px-cta-blue" onclick="openFormModal('t3')">START NOW</button>
     </div>
    </div>
 
@@ -3536,6 +3541,174 @@
  </div>
 </div>
 </footer>
+
+<!-- ============ PLAN FORM POPUP (GHL embeds) ============ -->
+<style>
+.form-modal{
+  display:none;position:fixed;inset:0;z-index:100000;
+  background:rgba(4,6,15,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.form-modal.is-open{display:flex}
+.form-modal-card{
+  background:#fff;border-radius:20px;width:100%;max-width:560px;
+  max-height:92vh;display:flex;flex-direction:column;overflow:hidden;
+  box-shadow:0 40px 100px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06);
+  animation:formModalIn .28s cubic-bezier(.22,1,.36,1);
+}
+@keyframes formModalIn{
+  from{opacity:0;transform:translateY(16px) scale(.98)}
+  to{opacity:1;transform:none}
+}
+.form-modal-head{
+  padding:18px 20px 16px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0;
+  background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);
+}
+.form-modal-head h2{
+  margin:0;font-size:16px;font-weight:700;color:#fff;letter-spacing:-.02em;
+}
+.form-modal-head p{
+  margin:4px 0 0;font-size:12px;color:rgba(255,255,255,.45);
+}
+.form-modal-close{
+  width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.08);cursor:pointer;flex-shrink:0;
+  font-size:20px;color:rgba(255,255,255,.7);line-height:1;font-family:inherit;
+  display:flex;align-items:center;justify-content:center;transition:background .2s;
+}
+.form-modal-close:hover{background:rgba(255,255,255,.18)}
+.form-modal-body{flex:1;overflow:auto;background:#fff;min-height:433px}
+.form-modal-panel{display:none;width:100%;height:100%;min-height:433px}
+.form-modal-panel.is-active{display:block}
+.form-modal-panel iframe{width:100%;height:100%;min-height:433px;border:none;border-radius:0;display:block}
+@media (max-width:540px){
+  .form-modal{padding:10px}
+  .form-modal-card{border-radius:16px;max-height:96vh}
+  .form-modal-body,.form-modal-panel,.form-modal-panel iframe{min-height:70vh}
+}
+</style>
+
+<div id="form-modal" class="form-modal" role="dialog" aria-modal="true" aria-labelledby="form-modal-title" onclick="if(event.target===this)closeFormModal()">
+ <div class="form-modal-card">
+  <div class="form-modal-head">
+   <div>
+    <h2 id="form-modal-title">Get Started</h2>
+    <p id="form-modal-sub">Katalyst CRM · Terms of use</p>
+   </div>
+   <button type="button" class="form-modal-close" aria-label="Close form" onclick="closeFormModal()">×</button>
+  </div>
+  <div class="form-modal-body">
+   <div class="form-modal-panel" id="form-panel-t1" data-form-key="t1">
+    <iframe
+      data-src="https://l.katalyst-crm.com/widget/form/BakpblZFdHmSmsolZxpF"
+      style="width:100%;height:100%;border:none;border-radius:8px"
+      id="inline-BakpblZFdHmSmsolZxpF"
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Tier 1 - Katalyst CRM/GHL Terms of use"
+      data-height="433"
+      data-layout-iframe-id="inline-BakpblZFdHmSmsolZxpF"
+      data-form-id="BakpblZFdHmSmsolZxpF"
+      data-cookie-consent="true"
+      data-cookie-consent-provider="auto"
+      title="Tier 1 - Katalyst CRM/GHL Terms of use">
+    </iframe>
+   </div>
+   <div class="form-modal-panel" id="form-panel-t2" data-form-key="t2">
+    <iframe
+      data-src="https://l.katalyst-crm.com/widget/form/qngZtpdaricpvNhTzvqy"
+      style="width:100%;height:100%;border:none;border-radius:8px"
+      id="inline-qngZtpdaricpvNhTzvqy"
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Tier 2 - Katalyst CRM/GHL Terms of use"
+      data-height="433"
+      data-layout-iframe-id="inline-qngZtpdaricpvNhTzvqy"
+      data-form-id="qngZtpdaricpvNhTzvqy"
+      data-cookie-consent="true"
+      data-cookie-consent-provider="auto"
+      title="Tier 2 - Katalyst CRM/GHL Terms of use">
+    </iframe>
+   </div>
+   <div class="form-modal-panel" id="form-panel-t3" data-form-key="t3">
+    <iframe
+      data-src="https://l.katalyst-crm.com/widget/form/KrUwqZIKqjpbJQ0hQBIy"
+      style="width:100%;height:100%;border:none;border-radius:8px"
+      id="inline-KrUwqZIKqjpbJQ0hQBIy"
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Tier 3 - Katalyst CRM/GHL Terms of use"
+      data-height="433"
+      data-layout-iframe-id="inline-KrUwqZIKqjpbJQ0hQBIy"
+      data-form-id="KrUwqZIKqjpbJQ0hQBIy"
+      data-cookie-consent="true"
+      data-cookie-consent-provider="auto"
+      title="Tier 3 - Katalyst CRM/GHL Terms of use">
+    </iframe>
+   </div>
+  </div>
+ </div>
+</div>
+<script src="https://l.katalyst-crm.com/js/form_embed.js"></script>
+<script>
+(function(){
+  var titles = {
+    t1: { title: 'Essential', sub: '$97/mo · Start your free trial' },
+    t2: { title: 'Powered UP', sub: '$279/mo · Get started' },
+    t3: { title: 'Premium', sub: '$597/mo · Get started' }
+  };
+  var lastFocus = null;
+  window.openFormModal = function(key){
+    var modal = document.getElementById('form-modal');
+    if(!modal) return;
+    lastFocus = document.activeElement;
+    document.querySelectorAll('.form-modal-panel').forEach(function(p){
+      var on = p.id === 'form-panel-' + key;
+      p.classList.toggle('is-active', on);
+      if(on){
+        var iframe = p.querySelector('iframe');
+        if(iframe && iframe.dataset.src && iframe.getAttribute('src') !== iframe.dataset.src){
+          iframe.src = iframe.dataset.src;
+        }
+      }
+    });
+    var meta = titles[key] || { title: 'Get Started', sub: 'Katalyst CRM · Terms of use' };
+    document.getElementById('form-modal-title').textContent = meta.title;
+    document.getElementById('form-modal-sub').textContent = meta.sub;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    var closeBtn = modal.querySelector('.form-modal-close');
+    if(closeBtn) closeBtn.focus();
+  };
+  window.closeFormModal = function(){
+    var modal = document.getElementById('form-modal');
+    if(!modal) return;
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  };
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && document.getElementById('form-modal').classList.contains('is-open')){
+      closeFormModal();
+    }
+  });
+})();
+</script>
 
 <!-- ============ TERMS & CONDITIONS MODAL ============ -->
 <div id="terms-modal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(4,6,15,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px" onclick="if(event.target===this)this.style.display='none'">
