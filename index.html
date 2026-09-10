@@ -539,6 +539,13 @@
  .foot-col a:hover{color:rgba(255,255,255,.9)!important}
  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.07);font-size:12px;color:rgba(255,255,255,.3)}
  .foot-bottom .links{display:flex;gap:20px}
+ .foot-legal{width:100%;text-align:center}
+ .foot-legal .copy{display:block;margin-bottom:10px;font-size:12px;color:rgba(255,255,255,.3)!important}
+ .foot-legal .links{justify-content:center;flex-wrap:wrap;gap:6px 0}
+ .foot-legal .links a{font-size:12px}
+ .foot-legal .links a:not(:last-child)::after{content:"|";margin:0 10px;color:rgba(255,255,255,.22);pointer-events:none}
+ .foot-legal .ccpa{display:block;margin:10px 0 0;font-size:12px;cursor:pointer}
+ .foot-legal .disclaimer{margin:10px auto 0;max-width:720px;font-size:12px;line-height:1.55;color:rgba(255,255,255,.32)!important}
 
  /* ============== ANIMATIONS ============== */
  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -3528,17 +3535,19 @@
  </div>
  </div>
  <!-- Restructured foot-bottom -->
- <div class="foot-bottom" style="flex-direction:column;gap:16px;padding-top:28px">
-  <div style="width:100%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-   <span style="font-size:12px;color:rgba(255,255,255,.3)">© 2026 Katalyst CRM powered by Industry Rockstar Switzerland. All rights reserved.</span>
-   <div class="links" style="gap:24px">
-    <a href="./privacy-policy.html" style="cursor:pointer;font-size:12px">Privacy Policy</a>
-    <a href="./terms-and-conditions.html" style="cursor:pointer;font-size:12px;color:rgba(255,255,255,.6)!important">Terms &amp; Conditions</a>
-    <a href="./terms-of-usage.html" style="cursor:pointer;font-size:12px">Terms of Usage</a>
-    <a href="#" onclick="if(window.Cookiebot){Cookiebot.renew();return false;}" style="cursor:pointer;font-size:12px">Cookie Policy</a>
-    <a href="mailto:support@katalyst-crm.com" style="cursor:pointer;font-size:12px">support@katalyst-crm.com</a>
-   </div>
+ <div class="foot-bottom foot-legal" style="flex-direction:column;gap:0;padding-top:28px">
+  <span class="copy">© 2026 Katalyst CRM powered by Industry Rockstar Switzerland GmbH. All rights reserved.</span>
+  <div class="links">
+    <a href="./terms-and-conditions.html">Terms &amp; Conditions</a>
+    <a href="./privacy-policy.html">Privacy Policy</a>
+    <a href="./earnings-and-results.html">Earnings &amp; Results</a>
+    <a href="./advertising-disclosure.html">Disclosure</a>
+    <a href="./refund-policy.html">Refund Policy</a>
+    <a href="./terms-of-usage.html">Terms of Usage</a>
+    <a href="mailto:support@katalyst-crm.com">Contact</a>
   </div>
+  <a class="ccpa" href="#" onclick="if(window.Cookiebot){Cookiebot.renew();return false;}">Do Not Sell or Share My Personal Information</a>
+  <p class="disclaimer">Educational products and consulting services. Nothing on this website constitutes legal, financial, tax, or investment advice.</p>
  </div>
 </div>
 </footer>

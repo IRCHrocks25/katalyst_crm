@@ -7,6 +7,7 @@
      from search engines. Shared directly with clients who are booking their
      onboarding calls. Lives at /funnel/. -->
 <meta name="robots" content="noindex, nofollow" />
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="8e3a5254-794f-4028-abb8-1d214f26bc6e" data-blockingmode="auto" type="text/javascript"></script>
 <title>Book Your Onboarding | Katalyst CRM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +18,7 @@
   body{
     background:radial-gradient(120% 120% at 50% 0%, #0a0e22 0%, #04060f 55%, #04060f 100%);
     color:#fff;-webkit-font-smoothing:antialiased;line-height:1.5;
-    display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px;
   }
   .card{
     width:100%;max-width:540px;text-align:center;
@@ -48,6 +49,11 @@
   .foot{margin-top:34px;font-size:13px;color:rgba(255,255,255,.4)}
   .foot a{color:rgba(255,255,255,.7);text-decoration:none}
   .foot a:hover{text-decoration:underline}
+  .legal-foot{width:100%;max-width:720px;margin:28px auto 0;text-align:center;font-size:12px;color:rgba(255,255,255,.38);line-height:1.55}
+  .legal-foot .links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin:8px 0}
+  .legal-foot a{color:rgba(255,255,255,.62);text-decoration:none}
+  .legal-foot a:hover{text-decoration:underline}
+  .legal-foot .links a:not(:last-child)::after{content:"|";margin:0 10px;color:rgba(255,255,255,.22);pointer-events:none}
 </style>
 </head>
 <body>
@@ -75,6 +81,20 @@
 
     <p class="foot">Already a client? <a href="https://app.industryrockstars.ch/">Log in to your account</a></p>
   </main>
+  <footer class="legal-foot">
+    <div>© 2026 Katalyst CRM powered by Industry Rockstar Switzerland GmbH. All rights reserved.</div>
+    <div class="links">
+      <a href="../terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../earnings-and-results.html">Earnings &amp; Results</a>
+      <a href="../advertising-disclosure.html">Disclosure</a>
+      <a href="../refund-policy.html">Refund Policy</a>
+      <a href="../terms-of-usage.html">Terms of Usage</a>
+      <a href="mailto:support@katalyst-crm.com">Contact</a>
+    </div>
+    <div><a href="#" onclick="if(window.Cookiebot){Cookiebot.renew();return false;}">Do Not Sell or Share My Personal Information</a></div>
+    <p>Educational products and consulting services. Nothing on this website constitutes legal, financial, tax, or investment advice.</p>
+  </footer>
 
 <script
   src="https://sopmaster.katek.app/embed/sop-assistant.js"
