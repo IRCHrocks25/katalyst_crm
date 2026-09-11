@@ -54,6 +54,23 @@
   .legal-foot a{color:rgba(255,255,255,.62);text-decoration:none}
   .legal-foot a:hover{text-decoration:underline}
   .legal-foot .links a:not(:last-child)::after{content:"|";margin:0 10px;color:rgba(255,255,255,.22);pointer-events:none}
+  @media (max-width:768px){
+    body{padding:40px 20px 24px;align-items:stretch}
+    .card{margin:0 auto}
+    .legal-foot{padding-bottom:40px;font-size:12px;line-height:1.4;text-align:left;margin-left:0;margin-right:0}
+    .legal-foot .links{flex-direction:column;align-items:flex-start;gap:0;margin:8px 0 2px}
+    .legal-foot .links a{
+      font-size:14px;
+      line-height:1.15;
+      padding:9px 0;
+      min-height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+    }
+    .legal-foot .links a:not(:last-child)::after{content:none;margin:0}
+    .legal-foot a{font-size:14px;line-height:1.2;padding:10px 0;display:flex;align-items:center;min-height:40px}
+  }
 </style>
 </head>
 <body>
